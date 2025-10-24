@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Management Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Football Management Dashboard</h1>
+  <nav>
+    <ul>
+      <li><a href="#players">Players</a></li>
+      <li><a href="#matches">Matches</a></li>
+      <li><a href="#stats">Statistics</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Player Management -->
+  <section id="players" class="section-container">
+    <h2>Player Management</h2>
+
+    <div class="form-container">
+      <h3>Add New Player</h3>
+      <form id="player-form">
+        <div class="form-group">
+          <label for="player-name">Name:</label>
+          <input type="text" id="player-name" required>
+        </div>
+        <div class="form-group">
+          <label for="player-age">Age:</label>
+          <input type="number" id="player-age" min="18" max="45" required>
+        </div>
+        <div class="form-group">
+          <label for="player-dob">Date of Birth:</label>
+          <input type="date" id="player-dob" required>
+        </div>
+        <div class="form-group">
+          <label for="player-position">Position:</label>
+          <select id="player-position" required>
+            <option value="">Select Position</option>
+            <option value="GK">Goalkeeper</option>
+            <option value="CB">Center Back</option>
+            <option value="LB">Left Back</option>
+            <option value="RB">Right Back</option>
+            <option value="DM">Defensive Midfielder</option>
+            <option value="CM">Center Midfielder</option>
+            <option value="AM">Attacking Midfielder</option>
+            <option value="LW">Left Winger</option>
+            <option value="RW">Right Winger</option>
+            <option value="ST">Striker</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="player-number">Jersey Number:</label>
+          <input type="number" id="player-number" required>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="action-btn primary-btn">Add Player</button>
+        </div>
+      </form>
+    </div>
+
+    <h3>Player List</h3>
+    <table class="player-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Position</th>
+        <th>Number</th>
+        <th>Injury Status</th>
+      </tr>
+      </thead>
+      <tbody id="players-table-body"></tbody>
+    </table>
+  </section>
+
+  <!-- Match Schedule -->
+  <section id="matches" class="section-container">
+    <h2>Match Schedule</h2>
+    <div id="matches-container" class="match-grid">
+      <p class="no-data-msg">Loading matches...</p>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section id="stats" class="section-container">
+    <h2>Match Statistics</h2>
+    <div class="form-group">
+      <label for="match-select">Select Match:</label>
+      <select id="match-select" class="form-control">
+        <option value="">-- Select a Completed Match --</option>
+      </select>
+    </div>
+    <div id="stats-display" class="stats-card-grid">
+      <p class="no-data-msg">Select a match to view statistics.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Football Management System. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
